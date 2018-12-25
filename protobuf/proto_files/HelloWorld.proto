@@ -1,0 +1,14 @@
+syntax = "proto3";
+package HelloWorld;
+
+message Person{
+  int32 id = 1;
+  string name = 2;
+  Country nationality = 3;
+
+  enum Country{
+    INDIA = 0;
+    PAKISTAN = 1;
+    USA = 2;
+  }
+}
