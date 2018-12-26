@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package testprotobuf;
+
+message Individual{
+  int32 id = 1;
+  string name = 2;
+  int64 ph = 3;
+  Address add = 4;
+
+  message Address{
+    int32 house_no = 1;
+    string street = 2;
+    string city = 3;
+  }
+}

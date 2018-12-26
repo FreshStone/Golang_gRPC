@@ -1,0 +1,16 @@
+syntax = "proto3";
+package testprotobuf;
+
+import "proto_files/testprotobufIndividual.proto";
+
+message Enterprise{
+  int32 revenue = 1;
+  testprotobuf.Individual ceo = 2;
+  testprotobuf.Individual.Address add= 3;
+  Domain d = 4;
+  enum Domain{
+    TECH = 0;
+    SECURITY = 1;
+    SERVICES = 2;
+  }
+}
