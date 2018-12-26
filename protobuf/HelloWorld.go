@@ -13,9 +13,12 @@ import (
 )
 
 func main(){
-  method := flag.String("f", "list", "Usage: go run HelloWorld.go method_name")
   flag.Parse()
-  if *method == "add"{
+  if flag.NArg() != 1 {
+    fmt.Fprintln(os.Stderr, "Incorrect Usage\nUsage: go run HelloWorld.go method_name\n")
+    os.Exit(1)
+  }
+  if flag.Arg(0) == "add"{
     if status := addPerson(); status{
       fmt.Println("succesfullty added person")
     }
