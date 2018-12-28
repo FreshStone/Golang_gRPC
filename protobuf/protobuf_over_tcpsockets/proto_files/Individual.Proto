@@ -9,7 +9,7 @@ message Individual{
   Address add = 4;
 
   message Address{
-    int32 house_no = 1;
+    int64 housenum = 1;
     string street = 2;
     string city = 3;
   }
