@@ -85,7 +85,7 @@ func startClient(mode string){
 			if err != nil{
 				fmt.Fprintf(os.Stderr, "couldn't marshal person struct: %v\n", err)
 			}
-			binary.PutVarint(len_arr, int64(len(msg)+1))
+			binary.PutVarint(len_arr, int64(len(msg)+1))   // buffer type from protobuf/proto package could be used for encoding int and marhsaling protobufs msgs 
 			_, err = conn.Write(len_arr)
 			if err != nil{
                                 fmt.Fprintf(os.Stderr, "couldn't write length to the connection: %v\nclosing connection..\n", err)
