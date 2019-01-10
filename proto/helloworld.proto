@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package grpc;
+
+import "timestamp.proto";
+
+
+
+service Echo{
+	rpc echo(Request) returns (Response) {}
+}
+
+service Time{
+	rpc getTime (Void) returns (ServerTime) {}
+}
+
+message Void{}
+
+message ServerTime{
+	grpc.Timestamp time = 1; //package_name.MessageName
+	string hostname = 2;
+}
+
+message Request{
+	string txt = 1;
+}
+
+message Response{
+	string txt = 1;
+}

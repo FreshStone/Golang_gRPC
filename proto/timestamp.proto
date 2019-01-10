@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package grpc;
+
+message Timestamp{
+	int64 seconds = 1;
+	int32 nano = 2;
+}
