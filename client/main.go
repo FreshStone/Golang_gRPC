@@ -11,9 +11,9 @@ import (
 
 func main(){
 	text := "hello"
-	cc, err := grpc.Dial(":50051", grpc.WithInsecure()) //use nginx as reverse proxy server
+	cc, err := grpc.Dial(":50051", grpc.WithInsecure()) //could also use nginx as reverse proxy server
 	if err != nil{
-		fmt.Errorf("couldn't call nginx: %v", err)
+		fmt.Errorf("couldn't call server: %v", err)
 	}
 	defer cc.Close()
 	c := pb.NewEchoClient(cc)
